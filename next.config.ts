@@ -16,4 +16,25 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+
+const withPWA = require('next-pwa')({
+  runtimeCaching: [
+    {
+      urlPattern: /\/character\/.*/,
+      handler: 'StaleWhileRevalidate',
+      options: {
+        cacheName: 'character-pages',
+        expiration: {
+          maxEntries: 50
+        }
+      }
+    }
+  ]
+});
+
+const config = withPWA({
+  ...nextConfig,
+  reactStrictMode: true,
+})
+
+export default config;

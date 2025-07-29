@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import OfflineBanner from "@/component/OfflineBanner";
+import ServiceWorkerRegistration from "@/component/ServiceWorker";
 
 export const metadata: Metadata = {
   title: "Rick and Morty Explorer",
@@ -31,6 +32,7 @@ export default function RootLayout({
             <div className="mx-auto max-w-7xl">
               {children}
             </div>
+            <ServiceWorkerRegistration/>
           </div>
         </div>
 
