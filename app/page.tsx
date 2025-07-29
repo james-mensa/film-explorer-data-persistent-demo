@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 
 import { useCharacterStore } from "@/store/characters";
 import { CharacterCard } from "@/component/CharacterCard";
+import { CharacterCardSkeleton } from "@/component/loaders/CharacterCardLoader";
 
 const Home = () => {
   const {
@@ -20,14 +21,16 @@ const Home = () => {
   return (
     <main className="p-4">
       <h1 className="text-2xl font-bold mb-4">Character List</h1>
-
-      {isLoading && <p className="text-blue-500">Loading...</p>}
       {errorMsg && <p className="text-red-500">{errorMsg}</p>}
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {data.map((character, index) => (
-          <CharacterCard key={index} {...character} />
-        ))}
+      {isLoading
+          ? Array.from({ length: 8 }).map((_, i) => (
+              <CharacterCardSkeleton key={`skeleton-${i}`} />
+            ))
+          : data.map((character, index) => (
+              <CharacterCard key={index} {...character} />
+            ))}
       </div>
     </main>
   );
