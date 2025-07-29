@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Film Explorer with Offline Access (Demo)
 
-## Getting Started
+  
 
-First, run the development server:
+A full-stack web application built with **Next.js 14** and **Tailwind CSS** that lets users explore characters from the [Rick and Morty API](https://rickandmortyapi.com/), even when offline.
+
+  
+
+---
+
+  
+
+##  Features
+
+  
+
+-  **Home Page**: Displays a list of characters fetched from the Rick and Morty API.
+
+-  **Details Page**: Shows image, name, status, species, location, and episodes of the selected character.
+
+-  **Offline Support**: Both the Home Page and visited Details Pages are cached and accessible without internet.
+
+-  **Online/Offline Indicator**: Visual banner informs users when they go offline.
+
+-  **State Management with Zustand**: Optimized global state with caching and `zustand/persist` for seamless user experience.
+
+  
+
+---
+
+  
+
+## Tech Stack
+
+  
+
+-  **Next.js 14 (App Router)**
+
+-  **Tailwind CSS**
+
+-  **Zustand (with `persist` middleware)**
+
+-  **Axios**
+
+-  **Rick and Morty API** (public API)
+
+  
+
+---
+
+  
+
+##  Setup Instructions
+
+  
+
+1.  **Clone the Repository**
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+git clone https://github.com/james-mensa/film-explorer-data-persistent-demo.git
+
+cd film-explorer
+
+npm install
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+  
+  
+  
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+##  Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+  
 
-## Learn More
+```plaintext
 
-To learn more about Next.js, take a look at the following resources:
+├── apis/
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+│ ├── apiClient.ts // Axios instance
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+│ └── makeApiCall.ts // Wrapper for API calls
 
-## Deploy on Vercel
+├── store/
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+│ └── useCharacterStore.ts // Zustand global store
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+├── types/
+
+│ └── apis.ts // TypeScript interfaces
+
+├── app/
+
+│ ├── page.tsx // Home page
+
+│ └── character/[id]/page.tsx // Character details page
+
+```
