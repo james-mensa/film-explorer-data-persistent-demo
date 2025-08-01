@@ -94,6 +94,10 @@ npm install
 
 │ ├── page.tsx // Home page
 
+├── service-worker/
+
+│ ├── sw.ts  // sw for pwa
+
 │ └── character/[id]/page.tsx // Character details page
 
 ```

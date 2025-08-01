@@ -4,10 +4,10 @@ import OfflineBanner from "@/component/OfflineBanner";
 
 
 
-const APP_NAME = "PWA App";
-const APP_DEFAULT_TITLE = "My Awesome PWA App";
-const APP_TITLE_TEMPLATE = "%s - PWA App";
-const APP_DESCRIPTION = "Best PWA app in the world!";
+const APP_NAME = "Character Explorer";
+const APP_DEFAULT_TITLE = "Character Explorer - Discover & Explore";
+const APP_TITLE_TEMPLATE = "%s | Character Explorer";
+const APP_DESCRIPTION = "Explore and discover detailed character profiles with offline support using our modern PWA experience.";
 
 export const metadata: Metadata = {
   applicationName: APP_NAME,

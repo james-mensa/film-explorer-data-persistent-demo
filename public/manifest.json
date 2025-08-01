@@ -1,6 +1,7 @@
 {
-    "name": "My Awesome PWA app",
-    "short_name": "PWA App",
+  "name": "Character Explorer - Discover & Explore",
+  "short_name": "Character Explorer",
+  "description": "Explore detailed character profiles and access them offline using this modern PWA.",
     "icons": [
       {
         "src": "/icons/android-chrome-192x192.png",
