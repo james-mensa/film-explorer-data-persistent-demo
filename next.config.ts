@@ -18,13 +18,14 @@ const nextConfig: NextConfig = {
 };
 
 
-
+const revision = crypto.randomUUID();
 const withSerwist = withSerwistInit({
   swSrc: "service-worker/sw.ts",
   swDest: "public/sw.js",
   cacheOnNavigation: true,
   reloadOnOnline:true,
   disable:false,
+  additionalPrecacheEntries: [{ url: "/~offline", revision }],
   
 });
 
